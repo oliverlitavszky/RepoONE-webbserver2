@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+    background-image: linear-gradient(100deg,  rgb(153, 153, 165), rgb(94, 86, 86));
+}
+
+header {
+  position: relative;
+  height: 300px;
+  background-image: linear-gradient(150deg, #ff9d2f,  purple);
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 5vw)
+  );
+  /* change the calc height to a percentage height to get alternate responsive behavior*/
+}
+
+h1 {
+  margin: 0;
+  padding: 150px 0;
+  font: 44px "‘DragonForcE’x";
+  color: white;
+  text-align: center;
+}
+
+section {
+  border-inline: 20px;
+  margin-top: -5vw;
+  background-image: linear-gradient(135deg,  rgb(7, 7, 172), rgb(173, 4, 4));
+}

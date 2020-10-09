@@ -1,20 +1,37 @@
 const express = require('express')
+const ejs = require('ejs')
+const databaseModule = require('./databaseModule')
 const app = express()
 const port = 3000
-const clientDir = __dirname + '\\client\\'
 
-const bodyParser = require('body-parser')
-const { response } = require('express')
+const clientDir = __dirname + "\\client\\"
 
-app.use(bodyParser())
+app.use(express.json())
+app.use(express.urlencoded())
 
-app.get('/', (req, res) => res.sendFile(clientDir + 'index.html'))
-app.get('/kebab', (req, res) => res.sendFile(clientDir + 'style.css'))
-app.get('/bilder/weeho.jpg', (req, res) => res.sendFile(clientDir + '/bilder/weeho.jpg'))
+app.set('view-engine', 'ejs')
 
-app.post('/', function(req, res) {
-    console.log(req.body)
-    res.redirect('/')
+app.get('/', (req, res) => {
+  res.render("pages/index.ejs", {name:""})
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.get('/bajs', (req, res) => {
+  res.sendFile(clientDir + "stule.css")
+})
+
+app.get('/jesus', (req, res) => {
+  res.sendFile(clientDir + "download.jpg")
+})
+
+app.post('/', (req, res) => {
+  console.log(req.body.name)
+  console.log(req.body.email)
+
+  databaseModule.storePerson(req.body.name, req.body.email, req.body.age)
+
+  res.render("pages/index.ejs", {name:req.body.name})
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`)
+}) 
