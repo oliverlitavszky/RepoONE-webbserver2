@@ -1,9 +1,15 @@
 body{
     text-align: center;
-    background-image: linear-gradient(100deg,  rgb(153, 153, 165), rgb(94, 86, 86));
+    background-image: linear-gradient(100deg,  rgb(189, 189, 189), rgb(110, 110, 110));
+}
+form{
+  background-color: black;
+  opacity: 40%;
+  border-style: solid;
 }
 
 header {
+  border-style: solid;
   position: relative;
   height: 300px;
   background-image: linear-gradient(150deg, #ff9d2f,  purple);
@@ -25,7 +31,7 @@ h1 {
 }
 
 section {
-  border-inline: 20px;
+  border-style: solid;
   margin-top: -5vw;
   background-image: linear-gradient(135deg,  rgb(7, 7, 172), rgb(173, 4, 4));
 }
