@@ -8,6 +8,7 @@ const personModule = require('./personModule')
 
 const clientDir = __dirname + "\\client\\"
 
+
 app.use(express.json())
 app.use(express.urlencoded())
 
